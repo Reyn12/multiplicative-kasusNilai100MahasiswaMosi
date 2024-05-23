@@ -1,60 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Number Generator</title>
-    <link rel="stylesheet" href="src/style.css">
-</head>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/responsive.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>Soal Nomor 2</h1>
-        <h1>Random Number Generator Multiplicative</h1>
-        <h2>Kasus Nilai Akhir 100 Mhsiswa MOSI Distribusi Normal</h2>
-        <div class="input-section">
-            <label for="Z0">Z<sub>0</sub>:</label>
-            <input type="number" id="Z0" name="Z0" value="10122002">
-            <label for="a">a:</label>
-            <input type="number" id="a" name="a" value="7">
-            <label for="m">m:</label>
-            <input type="number" id="m" name="m" value="128">
-            <label for="mu">μ:</label>
-            <input type="number" id="mu" name="mu" value="56.27">
-            <label for="sigma">σ:</label>
-            <input type="number" id="sigma" name="sigma" value="17.57">
-            <br><br>
-            <button onclick="generateTables()">Generate Tables</button>
-        </div>
-        <div class="table-section">
-            <table id="randomTable">
-                <thead>
-                    <tr>
-                        <th>i</th>
-                        <th>Z<sub>0</sub></th>
-                        <th>a</th>
-                        <th>m</th>
-                        <th>μ</th>
-                        <th>σ</th>
-                        <th>(a*Z<sub>i</sub>)</th>
-                        <th>Z<sub>i</sub></th>
-                        <th>Z<sub>i+1</sub></th>
-                        <th>U<sub>i</sub></th>
-                        <th>U<sub>i+1</sub></th>
-                        <th>(-2lnU<sub>i</sub>)<sup>1/2</sup></th>
-                        <th>cos(2π*U<sub>(i+1)</sub>)</th>
-                        <th>Z</th>
-                        <th>X = μ + σZ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Generated rows will go here -->
-                </tbody>
-            </table>
-        </div>
+      <h1>Soal Nomor 2</h1>
+      <h1>Random Number Generator Multiplicative</h1>
+      <hr />
+      <h2>Kasus Nilai Akhir 100 Mhsiswa MOSI <b>Distribusi Normal</b></h2>
+      <div class="input-section">
+        <section>
+          <label for="Z0">Z<sub>0</sub> :</label>
+          <input type="number" id="Z0" name="Z0" value="10122002" />
+        </section>
+        <section>
+          <label for="a">a :</label>
+          <input type="number" id="a" name="a" value="7" />
+        </section>
+        <section>
+          <label for="m">m :</label>
+          <input type="number" id="m" name="m" value="128" />
+        </section>
+        <section>
+          <label for="mu">μ :</label>
+          <input type="number" id="mu" name="mu" value="56.27" />
+        </section>
+        <section>
+          <label for="sigma">σ :</label>
+          <input type="number" id="sigma" name="sigma" value="17.57" />
+        </section>
+      </div>
+      <button onclick="generateTables()" class="btn-number">
+        Generate Tables
+      </button>
+      <div class="table-section">
+        <table id="randomTable">
+          <thead>
+            <tr>
+              <th>i</th>
+              <th>Z<sub>0</sub></th>
+              <th>a</th>
+              <th>m</th>
+              <th>μ</th>
+              <th>σ</th>
+              <th>(a*Z<sub>i</sub>)</th>
+              <th>Z<sub>i</sub></th>
+              <th>Z<sub>i+1</sub></th>
+              <th>U<sub>i</sub></th>
+              <th>U<sub>i+1</sub></th>
+              <th>(-2lnU<sub>i</sub>)<sup>1/2</sup></th>
+              <th class="cos">cos(2π*U<sub>(i+1)</sub>)</th>
+              <th>Z</th>
+              <th>X = μ + σZ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Generated rows will go here -->
+          </tbody>
+        </table>
+      </div>
     </div>
     <script src="src/scripts.js"></script>
-</body>
-
+  </body>
 </html>
