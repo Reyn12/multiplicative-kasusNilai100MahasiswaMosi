@@ -14,8 +14,6 @@ function generateTables() {
 
   let Z = Z0;
   let results = [];
-  let repeatData = [];
-  let xiValues = new Set();
 
   for (let i = 1; i <= 300; i++) {
     const aZ = a * Z;
@@ -45,39 +43,10 @@ function generateTables() {
       X,
     });
 
-    if (xiValues.has(X)) {
-      repeatData.push({
-        i,
-        Z,
-        a,
-        m,
-        mu,
-        sigma,
-        aZ,
-        Zi,
-        Zi1: (a * Zi) % m,
-        Ui,
-        Ui1,
-        sqrtNeg2LnUi,
-        cos2PiUi1,
-        Zvalue,
-        X,
-      });
-    } else {
-      xiValues.add(X);
-    }
-
     Z = Zi;
   }
 
   updateTable("randomTable", results);
-
-  const repeatCount = repeatData.length;
-  document.getElementById(
-    "repeatCount"
-  ).innerText = `Jumlah data yang berulang (Nilai Xi) adalah: ${repeatCount} data`;
-
-  updateTable("repeatTable", repeatData);
 }
 
 function updateTable(tableId, data) {
